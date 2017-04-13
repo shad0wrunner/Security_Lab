@@ -1,0 +1,20 @@
+<!-- this will override some ids to change the functionality -->
+<html>
+
+If an attacker may inject some element with an already existing id - its value will be used instead of intended<br>
+<!-- attack vector is here -->
+<input type='hidden' id="share_me" name="hacked_input" value="hacker"><br>
+Whom are you (presumably ;) going to share it with:<br>
+<input id='share_me' value="legal user">
+
+<script>
+function share()
+{
+	shareable = document.getElementById('share_me').value;
+	alert('I will share it with '+shareable)
+}
+</script>
+<br>
+<button onclick="share()">Share</button>
+
+</html>

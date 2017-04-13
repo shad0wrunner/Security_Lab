@@ -1,6 +1,9 @@
 <!-- this will redefine default assumed href value-->
 <html>
 
+Suppose the attacker was able to inject &quot;&gt;&lt;base href="http://evil.com"&gt;<br>
+Then all 'default' hrefs like a href="temp.php" will be redirected to the new base value<br> 
+
 <!-- attack vector is here -->
 <base href="http://evil.com">
 

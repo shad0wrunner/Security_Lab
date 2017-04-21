@@ -1,0 +1,20 @@
+<!-- this will override some ids to change the forms behavior -->
+<html>
+
+If an attacker may inject some form with input named as an already existing input - first occurence is likely to be used on the server side. <br>
+<!-- attack vector is here -->
+<form action="/change_password.php">
+<input type='hidden' name="username" value="some another legal user"><br>
+Here is the hacked input, containing a hidden value and changed form tag to submit change password request instead of the legal invite user<br>
+
+
+<!-- legal form -->
+<form action="/invite_user.php">
+Username to invite: <input type="text" name="username" value="legal user"><br>
+CSRF token (usually hidden) <input type="text" name="csrf_token" value="1n3kjd43fsmk23mkm4"><br>
+<input type="submit">
+</form>
+
+
+
+</html>
